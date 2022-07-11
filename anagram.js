@@ -9,6 +9,7 @@ function getCharCount(str) {
   return count;
 }
 
+// with 3 loops
 function isAnagram(str1, str2) {
   if (str1.length !== str2.length) {
     return false;
@@ -25,3 +26,21 @@ function isAnagram(str1, str2) {
 }
 
 console.log(isAnagram("cat", "act"));
+
+// with 2 loops
+
+function checkAnagram(str1, str2) {
+  const count = getCharCount(str1);
+
+  for (let key of str2) {
+    if (!count[key]) {
+      return false;
+    } else {
+      count[key] -= 1;
+    }
+  }
+  return true;
+}
+
+console.log(checkAnagram("cat", "act"));
+console.log(checkAnagram("cat", "alt"));
