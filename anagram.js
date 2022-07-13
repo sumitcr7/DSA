@@ -44,3 +44,4 @@ function checkAnagram(str1, str2) {
 
 console.log(checkAnagram("cat", "act"));
 console.log(checkAnagram("cat", "alt"));
+console.log(checkAnagram("cat", "alt"));
