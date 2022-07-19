@@ -88,4 +88,9 @@ function areThereDuplicates(...arr) {
   return false;
 }
 
-console.log(areThereDuplicates(1, 2, 3, 2));
+// console.log(areThereDuplicates(1, 2, 3, 2));
+
+function areThereDuplicatesRef() {
+  return new Set(arguments).size !== arguments.length;
+}
+console.log(areThereDuplicatesRef(1, 2, 3, 2));
