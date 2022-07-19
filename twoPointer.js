@@ -58,6 +58,20 @@ function averagePair(arr, target) {
 
 function isSubsequence(str1, str2) {
   if (str1.length > str2.length) return false;
+  let j = 0;
+
+  while (j < str2.length) {
+    const char1 = str1[0];
+    const char2 = str2[j];
+    if (char1 === char2) {
+      str1 = str1.slice(1);
+      if (!str1) {
+        return true;
+      }
+    }
+    j++;
+  }
+  return false;
 }
 
-console.log(isSubsequence("avv", "avv"));
+console.log(isSubsequence("avv", "avdv"));
