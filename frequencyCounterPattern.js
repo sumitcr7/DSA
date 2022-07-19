@@ -55,3 +55,23 @@ function same_refactored(arr1, arr2) {
 console.log(same_refactored([1, 1, 2, 4], [1, 2, 3, 4]));
 console.log(same_refactored([1, 1, 2, 4], [1, 4, 1, 16]));
 console.log(same_refactored([1, 1, 2, 4], [1, 4, 1, 16, 2]));
+
+function sameFreq(num1, num2) {
+  num1 = num1.toString();
+  num2 = num2.toString();
+  if (num1.length !== num2.length) return false;
+  let charCount = {};
+  for (let i of num1) {
+    charCount[i] = (charCount[i] || 0) + 1;
+  }
+  for (let i of num2) {
+    if (!charCount[i]) {
+      return false;
+    }
+    charCount[i]--;
+  }
+  return true;
+}
+
+console.log(sameFreq(182, 281));
+console.log(sameFreq(182, 212));
