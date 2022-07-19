@@ -56,7 +56,7 @@ function averagePair(arr, target) {
 
 // given two strings check if the first is subsequence of the next string
 
-function isSubsequence(str1, str2) {
+function isSubsequenceWithSlice(str1, str2) {
   if (str1.length > str2.length) return false;
   let j = 0;
 
@@ -74,4 +74,26 @@ function isSubsequence(str1, str2) {
   return false;
 }
 
-console.log(isSubsequence("avv", "avdv"));
+// console.log(isSubsequenceWithSlice("avv", "avdv"));
+
+function isSubsequence(str1, str2) {
+  if (str1.length > str2.length) return false;
+
+  let i = 0;
+  let j = 0;
+
+  while (j < str2.length) {
+    const char1 = str1[i];
+    const char2 = str2[j];
+    if (char1 === char2) {
+      i++;
+      if (str1.length === i) {
+        return true;
+      }
+    }
+    j++;
+  }
+  return false;
+}
+
+console.log(isSubsequence("avv", "avv"));
