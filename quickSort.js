@@ -17,9 +17,25 @@ function  pivot(arr, start=0, end = arr.length-1) {
 
     swap(arr, start, swapIndex);
 
-    console.log(arr)
     return swapIndex;
     
 }
 
-console.log(pivot([8,2,4,1,5,8,0]))
+
+
+function quickSort(arr, start=0, end= arr.length -1 ) {
+    if(start<end){
+
+    const pivotIndex = pivot(arr, start, end);
+
+    quickSort(arr, start, pivotIndex - 1);
+    quickSort(arr, pivotIndex+1, end);
+    }
+
+    return arr;
+    
+    
+    
+}
+
+console.log(quickSort([3, 0,9,7,5,6,3,2,1]));
