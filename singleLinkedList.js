@@ -104,6 +104,16 @@ class SinlgeLinkList {
         this.length++;
         return true;
     }
+
+    remove(index){
+        if(index < 0 || index >= this.length) return false;
+        if(index === this.length - 1) return !!this.pop();
+        if(index === 0) return !!this.shift();
+        var prevNode = this.get(index-1);
+        prevNode.next = prevNode.next.next;
+        this.length--;
+        return true;
+    }
 }
 
 
