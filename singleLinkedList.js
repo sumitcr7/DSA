@@ -80,6 +80,16 @@ class SinlgeLinkList {
         }
         return current;
     }
+
+    set(index, val){
+        var node = this.get(index);
+        if(node){
+            node.value = val;
+            return true;
+        }
+        return false;
+        
+    }
 }
 
 
