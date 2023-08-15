@@ -10,7 +10,7 @@ class SinlgeLinkList {
     constructor(){
         this.head = null;
         this.tail = null;
-        this.length = null;
+        this.length = 0;
     }
 
     push(val){
@@ -68,6 +68,17 @@ class SinlgeLinkList {
         this.head = newNode;}
         this.length++;
         return this;
+    }
+
+    get(index){
+        if(index < 0 || index >= this.length) return undefined;
+        var current = this.head;
+        var counter=0;
+        while(counter !== index){
+            current = current.next;
+            counter++;
+        }
+        return current;
     }
 }
 
