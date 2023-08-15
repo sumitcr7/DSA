@@ -38,6 +38,10 @@ class SinlgeLinkList {
         this.tail = prev;
         this.tail.next = null;
         this.length--;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
         return current;
         
     }
@@ -47,6 +51,6 @@ class SinlgeLinkList {
 
 var list = new SinlgeLinkList();
 
-list.push("my");
-list.push("name");
-list.push("is");
+// list.push("my");
+// list.push("name");
+// list.push("is");
