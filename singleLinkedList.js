@@ -23,8 +23,24 @@ class SinlgeLinkList {
             this.tail = newNode;
         }
         this.length++;
+        return this.length;
     }
-    
+
+    pop(){
+        if(!this.head) return undefined;
+        var current = this.head;
+        var prev = this.head;
+        while(current.next){
+            prev = current;
+            current = current.next;
+            
+        };
+        this.tail = prev;
+        this.tail.next = null;
+        this.length--;
+        return current;
+        
+    }
 }
 
 
