@@ -114,6 +114,17 @@ class SinlgeLinkList {
         this.length--;
         return true;
     }
+
+    print(){
+        const arr =[];
+        let current = this.head;
+        while(current){
+            arr.push(current.value);
+            current = current.next;
+        }
+
+        return arr;
+    }
 }
 
 
