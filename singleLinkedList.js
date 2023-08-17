@@ -124,10 +124,26 @@ class SinlgeLinkList {
         }
 
         return arr;
+    };
+
+    reverse(){
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        var next;
+        var prev = null;
+
+        for(let i=0; i<this.length; i++){
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
     }
 }
 
-
+// 1 2 3 4
 
 var list = new SinlgeLinkList();
 
