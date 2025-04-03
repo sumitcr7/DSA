@@ -25,3 +25,19 @@ throttledFunction('A');  // Executes immediately
 throttledFunction('B');  // Ignored
 throttledFunction('C');  // Ignored
 setTimeout(() => throttledFunction('D'), 1200); // Executes after delay
+
+
+
+/// with date 
+// function throttle(func, delay) {
+//   let lastCall = 0;
+
+//   return function (...args) {
+//     const now = Date.now();
+
+//     if (now - lastCall >= delay) {
+//       lastCall = now;
+//       func.apply(this, args);
+//     }
+//   };
+// }
